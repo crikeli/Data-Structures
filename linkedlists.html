@@ -1,0 +1,257 @@
+<!-- Node -->
+<!-- val: Stores a value -->
+<!-- next: points to the next node in the list -->
+
+
+<!-- Implementation of an SLL -->
+
+<!-- We first define a constructor for a Node and a constructor for an SLL -->
+
+<!-- AddFront -->
+<script type="text/javascript">
+
+	function listNode(value){
+		this.val = value;
+		this.next = null;
+	}
+
+	function pushFront(firstNode, value){
+		var newHead = new listNode(value);
+		newHead.next = firstNode;
+		return newHead;
+	}
+
+</script>
+
+<!-- RemoveFront -->
+<script type="text/javascript">
+
+	function removeFront(frontNode){
+		if frontNode{
+			frontNode = frontNode.next;
+		}
+		return frontNode;
+	}
+</script>
+
+<!-- Contains -->
+<script type="text/javascript">
+
+	function Contains(list, value){
+		while (list){
+			if (list.val === value){
+				return true;
+			}
+			list = list.next
+		}
+		return false;
+	}
+</script>
+
+<!-- Front -->
+<script type="text/javascript">
+	
+	function Front(list){
+		if (!list){
+			return null;
+		}
+		list.val;
+	}
+
+</script>
+
+<!-- Length -->
+<script type="text/javascript">
+	
+	function Length(list){
+		var counter = 0;
+		while (list){
+			counter ++
+		}
+		return counter;
+	}
+
+</script>
+
+<!-- Max/Min -->
+<script type="text/javascript">
+	
+	function Min(list){
+		if (!list){
+			return null;
+		}
+		var lowVal = list.val;
+		list = list.next;
+		while (list){
+		if (list.val < lowVal)
+			lowVal = list.val;
+			list = list.next;
+		}
+	}
+
+	function Max(list){
+		if (!list){
+			return null;
+		}
+		var maxVal = list.val;
+		list = list.next;
+		while (list){
+			if (list.val > maxVal)
+				maxVal = list.val;
+				list = list.next;
+		}
+	}
+
+</script>
+
+<!-- Average -->
+
+<script type="">
+	
+	function Average(list){
+		if (!list){
+			return null;
+		}
+		var total = list.val;
+		var counter = 0;
+		list = list.next;
+
+		while (list){
+			total += list.val;
+			counter ++;
+			list = list.next;
+		}
+		return total/counter;
+	}
+
+</script>
+
+<!-- Back (Returns the last value in the linkedList) -->
+
+<script type="text/javascript">
+	
+	function Back(list){
+		if (!list){
+			return null;
+		}
+		while (list.next){
+			list = list.next;
+		}
+		return list.val;
+	}
+
+</script>
+
+<!-- pushBack (creates a listnode with a given value and inserts it at the end of a SLL) -->
+
+<script type="text/javascript">
+	
+	function listNode(value){
+		this.val = value;
+		this.next = null;
+	}
+
+	function pushBack(list, value){
+		var newNode = new listNode(value);
+		if (!list){
+			return newNode;
+		}
+		var runner = list;
+		while (runner.next){
+			runner = runner.next;
+		}
+		runner.next = newNode;
+		return list;
+
+	}
+
+</script>
+
+<!-- popBack(removes the last node and returns the new list) -->
+
+<script type="text/javascript">
+	
+
+	function popBack(list){
+		if(!list || !list.next){
+			return null;
+		}
+		var runner = list;
+		while (runner.next.next){
+			runner = runner.next;
+		}
+		runner.next = null;
+		return list;
+	}
+
+</script>
+
+<!-- appendVal inserts a new listNode(list, value, after) with given value immedietly after the node containing after. return newlist. -->
+
+<script type="text/javascript">
+
+	function listNode(value){
+		this.val = value;
+		this.next = null;
+	}
+	
+	function prependVal(list, value, after){
+		var newNode = new listNode(value);
+		if (!list){
+			return newNode;
+		}
+		var runner = list;
+		while (runner.next){
+			if (runner.val === after){
+				break;
+			}
+			runner = runner.next;
+		}
+		newNode.next = runner.next;
+		runner.next = newNode;
+		return list;
+	}
+
+</script>
+
+
+<!-- prependVal(list, value, before) add a value immedietly before the node containing before.  -->
+<script type="text/javascript">
+	
+	function listNode(value){
+		this.val = value;
+		this.next = null;
+	}
+
+	function listNode(list, value, before){
+		var newNode = new listNode(value);
+		if (!list || list.val === before){
+			newNode.next = list;
+			return newNode;
+		}
+		var runner = list;
+		while (runner.next){
+			if (runner.next.val === before){
+				break;
+			}
+			runner = runner.next;
+		}
+		newNode.next = runner.next;
+		runner.next = newNode;
+		return list;
+	}
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
